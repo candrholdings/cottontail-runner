@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict';
 
 var childProcess = require('child_process'),
@@ -6,7 +8,8 @@ var childProcess = require('child_process'),
     http = require('http'),
     path = require('path'),
     Q = require('q'),
-    tmpdir = require('os').tmpdir();
+    tmpdir = require('os').tmpdir(),
+    pathToRunner = path.resolve(module.filename, '../runner.js');
 
 main();
 
@@ -20,7 +23,7 @@ function main() {
 
     app.post('/start', function (req, res) {
         stopRunner(child).finally(function () {
-            var newChild = child = childProcess.fork('runner.js');
+            var newChild = child = childProcess.fork(pathToRunner);
 
             child.on('exit', function (exitCode) {
                 console.log('Runner exited with code ' + exitCode);

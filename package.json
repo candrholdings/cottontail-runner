@@ -1,20 +1,27 @@
 {
-  "name": "cottontail-runner",
+  "name": "cottontail",
   "version": "0.0.1-dev",
   "description": "Runner for Cottontail",
-  "keywords": ["cottontail", "webdriver", "webdriverio"],
+  "keywords": [
+    "cottontail",
+    "webdriver",
+    "webdriverio"
+  ],
   "bugs": {
     "url": "https://github.com/candrholdings/cottontail-runner/issues"
   },
   "license": "MIT",
-  "contributors": [{
-    "name": "William Wong",
-    "email": "compulim@hotmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "William Wong",
+      "email": "compulim@hotmail.com"
+    }
+  ],
   "main": "app.js",
   "repository": "github:candrholdings/cottontail-runner",
   "dependencies": {
     "body-parser": "^1.14.0",
+    "cors": "^2.7.1",
     "express": "^4.13.3",
     "q": "^1.4.1",
     "webdriverio": "^3.2.4"
