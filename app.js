@@ -107,7 +107,7 @@ function sendMessage(child, message) {
         timeout = setTimeout(function () {
             child && child.kill();
             deferred.reject(new Error('timeout'));
-        }, 5000);
+        }, 10000);
 
     child.once('message', function (message) {
         clearTimeout(timeout);
