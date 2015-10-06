@@ -13,6 +13,14 @@ var assert = require('assert'),
                 });
             });
 
+            session.addCommand('waitForPageLoad', function (ms) {
+                return this.waitUntil(function () {
+                    return this.execute(function () {
+                        return document.readyState === 'completed';
+                    });
+                }, ms || 500);
+            });
+
             return session;
         },
         step: function (step) {
